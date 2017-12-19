@@ -10,11 +10,9 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            string goodBye = "good bye Reinis";
-            string myName;
-            myName = Console.ReadLine();
-            Console.WriteLine("Hello, world!" + myName);
-            Console.WriteLine(goodBye);
+            PersonGreeter greet;
+            greet = new PersonGreeter();
+            greet.SayHello();
             Console.ReadLine();
         }
     }
