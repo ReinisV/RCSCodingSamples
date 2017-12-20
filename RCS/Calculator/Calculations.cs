@@ -12,6 +12,7 @@ namespace Calculator
         {
             // izvadīt tekstu, kas paprasa ciparu
             Console.WriteLine("please enter number:");
+
             // ielasīt ciparu no konsoles
             // izveido mainīgo, kas glabās tekstu
             int number;
