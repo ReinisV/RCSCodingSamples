@@ -19,11 +19,9 @@ namespace SmarterCalculator
             string input = Console.ReadLine();
 
             // izsauc aprēķināšanas funkciju un saglabā rezultātu
+            // TODO izlasīt materiālus par  try/catch un uztaisīt tā,
+            // TODO lai aplikācija nenokrīt, kad ievadīta nevalīda matemātiskā darbība
             int result = parser.ParseMath(input);
-            if (result == 0)
-            {
-                Console.WriteLine("operation unsucessful");
-            }
 
             // izvada rezultātu uz ekrāna
             Console.WriteLine("your result " + result);

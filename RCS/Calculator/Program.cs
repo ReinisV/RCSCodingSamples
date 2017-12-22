@@ -11,8 +11,7 @@ namespace Calculator
         static void Main(string[] args)
         {
             // izveido kalkulēšanas objektu
-            Calculations calc;
-            calc = new Calculations();
+            var calc = new Calculations();
 
             // paprasīt lietotājam vērtību
             int firstNumber = calc.AskUserForNumber();
