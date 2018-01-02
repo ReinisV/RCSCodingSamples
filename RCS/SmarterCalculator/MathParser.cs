@@ -22,12 +22,12 @@ namespace SmarterCalculator
             bool operationFound = false;
             // TODO izpētīt prezentācijas slaidus un piemēra koda gabalus, kas apraksta
             // TODO for ciklu un aizvietot while ciklu ar for ciklu
-            int counter = 0;
-            while (counter < input.Length)
+            
+            for (int i = 0; i < input.Length; i++)
             {
-                char symbol = input[counter];
+                char symbol = input[i];
                 // TODO pievienot nosacījumus šim ifam, kas ļautu piefiksēt arī citas darbības
-                if (symbol == '+')
+                if (symbol == '+' || symbol == '-')
                 {
                     // saglabā operāciju mainīgajā,
                     enteredOperation = symbol;
@@ -53,22 +53,20 @@ namespace SmarterCalculator
                     }
                 }
 
-                counter = counter + 1;
-
                 // ja iepriekšējā ciklā ir atrasta operācija,
-                bool endOfInputReached = counter == input.Length;
+                bool endOfInputReached = i == input.Length;
                 if (operationFound == true && endOfInputReached == true)
                 {
                     // TODO izveidot vairākus izpildes zarus, kas pārbaud iepriekš saglabāto operācijas tipu,
                     // TODO un veic pareizo darbību
                     // tad jāveic šī operācija
-                    int result = Int32.Parse(firstEnteredNumber) + Int32.Parse(secondEnteredNumber);
+                    if (enteredOperation == )
+                    int result = Int32.Parse(firstEnteredNumber) - Int32.Parse(secondEnteredNumber);
                     return result;
                 }
             }
 
             throw new Exception("Invalid mathematical izteiksme entered");
-            return 0;
         }
     }
 }

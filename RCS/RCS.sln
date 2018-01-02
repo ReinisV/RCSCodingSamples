@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmarterCalculator", "Smarte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyList", "BuyList\BuyList.csproj", "{72805933-7EA2-456F-A80C-C8691F011809}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordsFromSymbolsLookup", "WordsFromSymbolsLookup\WordsFromSymbolsLookup.csproj", "{44F54C6B-CCCD-4634-905F-C5B0FC03AA4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatDatingSite", "CatDatingSite\CatDatingSite.csproj", "{E5E2C4A3-CF74-41F4-94E0-5A1AF4F2E4C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{72805933-7EA2-456F-A80C-C8691F011809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72805933-7EA2-456F-A80C-C8691F011809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72805933-7EA2-456F-A80C-C8691F011809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F54C6B-CCCD-4634-905F-C5B0FC03AA4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F54C6B-CCCD-4634-905F-C5B0FC03AA4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F54C6B-CCCD-4634-905F-C5B0FC03AA4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F54C6B-CCCD-4634-905F-C5B0FC03AA4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E2C4A3-CF74-41F4-94E0-5A1AF4F2E4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E2C4A3-CF74-41F4-94E0-5A1AF4F2E4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E2C4A3-CF74-41F4-94E0-5A1AF4F2E4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E2C4A3-CF74-41F4-94E0-5A1AF4F2E4C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

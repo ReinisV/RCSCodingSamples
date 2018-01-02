@@ -20,7 +20,7 @@ namespace Calculator
             int secondNumber = calc.AskUserForNumber();
 
             // saskaita
-            int result = firstNumber / secondNumber;
+            int result = firstNumber + secondNumber;
             Console.WriteLine(result);
             Console.ReadLine();
         }
