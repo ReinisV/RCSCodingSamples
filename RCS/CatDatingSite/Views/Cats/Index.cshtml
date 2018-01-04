@@ -3,19 +3,21 @@
     ViewBag.Title = "Home Page";
 }
 
+@Html.ActionLink("pievienot jaunu kaķi", "AddCat", "Cats")
+
+
 <!-- kad vēlamies izsaukt C# kodu, lietojam at simbolu -->
 @foreach (var cat in Model)
 {
+    @Html.ActionLink("rediģēt kaķi", "EditCat", "Cats", new { editableCatId = cat.CatId }, null)
     <div class="row">
         <div class="col-md-12">
-            @Html.ActionLink("Nodzēst kaķi", "DeleteCats", "Home", new { deletableCatId = cat.CatId}, null)
+            @Html.ActionLink("Nodzēst kaķi", "DeleteCats", "Cats", new { deletableCatId = cat.CatId}, null)
             <h2>Cat name: @cat.CatName</h2>
             <p> Cat age is @cat.CatAge</p>
             <img src="@cat.CatImage" width="400" height="400"/>
             <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
+                @cat.CatDescription
             </p>
             <p>
                 <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
