@@ -2,28 +2,53 @@
 
 <h2>Rediģēt kaķi</h2>
 
-@using (Html.BeginForm("EditCat", "Cats", FormMethod.Post))
+@using (Html.BeginForm("EditCat", "Cats", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div class="row">
-        <div class="col-md-6">Cat name:</div>
-        <div class="col-md-6">@Html.EditorFor(Model => Model.CatName)</div>
-    </div>
+    @Html.HiddenFor(Model => Model.CatId)
 
-    <div class="row">
-        <div class="col-md-6">Cat age:</div>
-        <div class="col-md-6">@Html.EditorFor(Model => Model.CatAge)</div>
-    </div>
+    <div class="form-horizontal">
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatAge, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <div class="row">
-        <div class="col-md-6">Cat image:</div>
-        <div class="col-md-6">@Html.EditorFor(Model => Model.CatImage)</div>
-    </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CatImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CatImage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CatImage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            Kaķa attēls:
+            <div class="col-md-10">
+                <input type="file" id="ProfilePicture" name="uploadedPicture" />
+            </div>
+        </div>
 
-    <div class="row">
-        <div class="col-md-6">Cat description:</div>
-        <div class="col-md-6">@Html.EditorFor(Model => Model.CatDescription)</div>
-        <p>@Html.ValidationMessageFor(Model => Model.CatDescription)</p>
     </div>
+    
 
-    <input type="submit" value="Izveidot kaķi" />
+    <input type="submit" value="Saglabāt izmaiņas kaķī" />
 }

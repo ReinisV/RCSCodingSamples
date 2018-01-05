@@ -191,6 +191,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CatsController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,10 +209,19 @@
     <Compile Include="Migrations\201801041836130_added new field.Designer.cs">
       <DependentUpon>201801041836130_added new field.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801051818508_added files.cs" />
+    <Compile Include="Migrations\201801051818508_added files.Designer.cs">
+      <DependentUpon>201801051818508_added files.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801051829515_added files2.cs" />
+    <Compile Include="Migrations\201801051829515_added files2.Designer.cs">
+      <DependentUpon>201801051829515_added files2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CatDb.cs" />
     <Compile Include="Models\CatProfile.cs" />
+    <Compile Include="Models\File.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -280,6 +290,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CatProfiles\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -303,6 +315,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801041836130_added new field.resx">
       <DependentUpon>201801041836130_added new field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801051818508_added files.resx">
+      <DependentUpon>201801051818508_added files.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801051829515_added files2.resx">
+      <DependentUpon>201801051829515_added files2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

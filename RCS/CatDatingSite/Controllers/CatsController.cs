@@ -6,9 +6,12 @@ using System.Web.Mvc;
 
 namespace CatDatingSite.Controllers
 {
-    using System.Data.Entity.Migrations;
+    using System.Data.Entity;
+    using System.IO;
 
     using CatDatingSite.Models;
+
+    using File = CatDatingSite.Models.File;
 
     public class CatsController : Controller
     {
@@ -35,7 +38,7 @@ namespace CatDatingSite.Controllers
         {
             if (ModelState.IsValid == false)
             {
-                return RedirectToAction("AddCat");
+                return View(userCreatedCat);
             }
 
             // izveido savienojumu ar datubāzi
@@ -52,11 +55,42 @@ namespace CatDatingSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditCat(CatProfile catProfile)
+        public ActionResult EditCat(CatProfile catProfile, HttpPostedFileBase uploadedPicture)
         {
+            if (ModelState.IsValid == false)
+            {
+                return View(catProfile);
+            }
+
             using (var catDb = new CatDb())
             {
-                catDb.Entry(catProfile).CurrentValues.SetValues(catProfile);
+                // izveidojam jaunu profila bildes datubāzes eksemplāru, ko ierakstīsim datubāzē
+                var profilePic = new File();
+
+                // saglabājam bildes faila nosaukumu
+                profilePic.FileName = Path.GetFileName(uploadedPicture.FileName);
+                
+                // saglabājam bildes tipu
+                profilePic.ContentType = uploadedPicture.ContentType;
+
+                // izmantojam BinaryReader lai pārvērstu bildi baitos
+                using (var reader = new BinaryReader(uploadedPicture.InputStream))
+                {
+                    // saglabājam baitus datubāzes ierakstā
+                    profilePic.Content = reader.ReadBytes(uploadedPicture.ContentLength);
+                }
+                
+                // pasakam profila bildei, kurš kaķa profils ir kaķa profils, kam šī bilde pieder
+                profilePic.CatProfileId = catProfile.CatId;
+                profilePic.CatProfile = catProfile;
+
+                // pievienojam profila bildes datubāzes ierakstu Files tabulai
+                catDb.Files.Add(profilePic);
+
+                // paskam kaķu profilam, kas ir viņa profila bilde
+                catProfile.ProfilePicture = profilePic;
+                // pievienot using System.Data.Entity;
+                catDb.Entry(catProfile).State = EntityState.Modified;
                 catDb.SaveChanges();
             }
 
