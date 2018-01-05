@@ -1,24 +1,33 @@
 ﻿@model List<CatDatingSite.Models.CatProfile>
 
-@Html.ActionLink("pievienot jaunu kaķi", "AddCat", "Cats")
+<div class="container">
+    <div class="row">
+        @Html.ActionLink("pievienot jaunu kaķi", "AddCat", "Cats", htmlAttributes: new { @class = "btn btn-info", role = "button" })
+    </div>
+</div>
 
 
 <!-- kad vēlamies izsaukt C# kodu, lietojam at simbolu -->
 @foreach (var cat in Model)
 {
-    @Html.ActionLink("rediģēt kaķi", "EditCat", "Cats", new { editableCatId = cat.CatId }, null)
-    @Html.ActionLink("nopirkt kaķi", "BuyCat", "Cats", new { editableCatId = cat.CatId }, null)
+    
         <div class="row">
         <div class="col-md-12">
-            @Html.ActionLink("Nodzēst kaķi", "DeleteCats", "Cats", new { deletableCatId = cat.CatId}, null)
+            
             <h2>Cat name: @cat.CatName</h2>
             <p> Cat age is @cat.CatAge</p>
-            <img src="@cat.CatImage" width="400" height="400"/>
+            <!-- CatsController -> GetCatProfilePicture (catProfilePictureId)
+            /Cats/GetCatProfilePicture?catProfilePictureId=5 -->
+            @if (cat.ProfilePicture != null)
+            {
+                <img src="~/Cats/GetCatProfilePicture?catProfilePictureId=@cat.ProfilePicture.CatProfileId" class="img-responsive" />
+            }
             <p>
                 @cat.CatDescription
             </p>
             <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
+                @Html.ActionLink("Rediģēt kaķi", "EditCat", "Cats", new { editableCatId = cat.CatId }, htmlAttributes: new { @class = "btn btn-info", role = "button" })
+                @Html.ActionLink("Nodzēst kaķi", "DeleteCats", "Cats", new { deletableCatId = cat.CatId }, htmlAttributes: new { @class = "btn btn-info", role = "button" })
             </p>
         </div>
     </div>
