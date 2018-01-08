@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CatsController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -217,8 +218,17 @@
     <Compile Include="Migrations\201801051829515_added files2.Designer.cs">
       <DependentUpon>201801051829515_added files2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801081706471_added blogs.cs" />
+    <Compile Include="Migrations\201801081706471_added blogs.Designer.cs">
+      <DependentUpon>201801081706471_added blogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801081716303_added validations.cs" />
+    <Compile Include="Migrations\201801081716303_added validations.Designer.cs">
+      <DependentUpon>201801081716303_added validations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\CatDb.cs" />
     <Compile Include="Models\CatProfile.cs" />
     <Compile Include="Models\File.cs" />
@@ -287,6 +297,8 @@
     <Content Include="Views\Cats\Index.cshtml" />
     <Content Include="Views\Cats\AddCat.cshtml" />
     <Content Include="Views\Cats\EditCat.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,6 +333,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801051829515_added files2.resx">
       <DependentUpon>201801051829515_added files2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801081706471_added blogs.resx">
+      <DependentUpon>201801081706471_added blogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801081716303_added validations.resx">
+      <DependentUpon>201801081716303_added validations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
