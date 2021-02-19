@@ -3,7 +3,7 @@ I wrote the stuff in this repository while teaching the basic concepts of progra
 
 This code is what was developed together with the students during class. This does not contain the examples I coded and materials I wrote for the course. If you are interested in seeing those, contact me, and I'll try to dig them up. 
 
-Since the course ended, don't plan on adding anything to it.
+Since the course has ended, I don't plan on adding anything to it.
 
 ### Archivation note [END]
 
